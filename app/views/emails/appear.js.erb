@@ -6,11 +6,13 @@ var div;
 if (div.css('display') == "none") {
         div.slideDown(300);
         tr.addClass("read");
+        tr.removeClass("unread");
 } else {
         div.slideUp(300);
 }
 //Changer le css si l'email est lu
 if (<%= @email.read %> == false) {
         <%= @email.read = true %>;
-        tr.removeClass("unread")
+        tr.removeClass("unread");
+        tr.addClass("read");
     } 
