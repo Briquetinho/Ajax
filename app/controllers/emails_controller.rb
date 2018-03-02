@@ -5,6 +5,7 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:email_id])
     @idDiv = params[:id_div]
     @idTr = params[:id_tr]
+    @email.update_attributes(read: true)
   end
 
   # GET /emails
